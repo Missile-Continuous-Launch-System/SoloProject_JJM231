@@ -5,14 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - EnemyHead
-  - Enemy
-  - Head
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Enemy
+  - 
   - Water
   - UI
   - 
