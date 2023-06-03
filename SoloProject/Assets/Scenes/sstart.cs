@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class sstart : MonoBehaviour
 {
-    public void Click()
+    public void Update()
     {
-        SceneManager.LoadScene(1);
+        if(Input.GetKeyDown(KeyCode.Space)){
+
+            SceneManager.LoadScene(1);
+
+        }
     }
 }
