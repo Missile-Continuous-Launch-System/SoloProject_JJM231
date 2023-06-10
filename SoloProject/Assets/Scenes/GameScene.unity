@@ -140,9 +140,10 @@ GameObject:
   - component: {fileID: 303719051}
   - component: {fileID: 303719050}
   - component: {fileID: 303719049}
+  - component: {fileID: 303719053}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Ground
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -225,6 +226,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &303719053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303719048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0251b1d0ff0c241a6e2a169ba194f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &676479144
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +456,7 @@ MonoBehaviour:
   bombFactory: {fileID: 80917269588631263, guid: 1d091bee40076bf4aa319dcaeef7c872, type: 3}
   firepower: 50
   bombLifetime: 3
+  damageAmount: 9999
 --- !u!1 &702426438
 GameObject:
   m_ObjectHideFlags: 0

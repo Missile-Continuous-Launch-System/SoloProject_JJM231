@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    private AudioSource aaa;
-    public Animator animator;
-    public int maxHealth = 100;  // 최대 체력
-    private int currentHealth;  // 현재 체력
+    public float maxHealth = 100f; // 최대 체력
+    private float currentHealth; // 현재 체력
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = maxHealth; // 시작 시 체력을 최대 체력으로 초기화
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(float damageAmount)
     {
-        currentHealth -= damageAmount;
-        
-            if (currentHealth <= 0)
+        currentHealth -= damageAmount; // 피해량만큼 체력 감소
+
+        if (currentHealth <= 0)
         {
-            StartCoroutine(Die());
+            Die(); // 체력이 0 이하이면 사망 처리
         }
     }
 
-    IEnumerator Die(){
-        animator.SetTrigger("Hit");
-        yield return new WaitForSeconds(1.2f);
-        Destroy(gameObject);
+    private void Die()
+    {
+        // 적이 사망할 때 수행할 동작을 여기에 작성
+        // 예를 들면 사망 애니메이션 재생, 점수 증가 등을 수행할 수 있습니다.
+        Destroy(gameObject); // 적 오브젝트를 제거
     }
 }
