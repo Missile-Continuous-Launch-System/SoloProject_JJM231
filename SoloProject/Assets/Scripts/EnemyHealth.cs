@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth = 1f; // 최대 체력
+    public float maxHealth = 100f; // 최대 체력
     private float currentHealth; // 현재 체력
 
     private void Start()

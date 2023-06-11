@@ -13,42 +13,23 @@ public class FPSController : MonoBehaviour
 
     private float verticalRotation = 0f;
     private bool isGrounded = true;
-    private bool isUIActive = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerCamera = GetComponentInChildren<Camera>();
-        LockAndHideCursor();
-    }
-
-    private void LockAndHideCursor()
-    {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
-    private void UnlockAndShowCursor()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isUIActive = !isUIActive;
-
-            if (isUIActive)
-            {
-                UnlockAndShowCursor();
-            }
-            else
-            {
-                LockAndHideCursor();
-            }
-        }
         // 이동 처리
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        Vector3 movement = transform.right * moveHorizontal + transform.forward * moveVertical;
+        rb.velocity = new Vector3(movement.x * moveSpeed, rb.velocity.y, movement.z * moveSpeed);
+
         // 마우스 시야 처리
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
